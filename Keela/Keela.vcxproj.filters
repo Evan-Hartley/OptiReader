@@ -4,6 +4,9 @@
     <Filter Include="Keela">
       <UniqueIdentifier>{274C850D-9360-ADBE-5CE2-501EC8B5A9EF}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Keela\Events">
+      <UniqueIdentifier>{2BE6945A-1749-24FF-C0CE-5CB5AC10F081}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Keela.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\Keela\EntryPoint.h">
       <Filter>Keela</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Keela\Events\ApplicationEvent.h">
+      <Filter>Keela\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Keela\Events\Event.h">
+      <Filter>Keela\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Keela\Events\KeyEvent.h">
+      <Filter>Keela\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Keela\Events\MouseEvent.h">
+      <Filter>Keela\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Keela\Log.h">
       <Filter>Keela</Filter>

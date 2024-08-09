@@ -12,3 +12,5 @@
 	#error Keela only supports Windows!
 #endif
 
+// Define Bit(x) as 1 shifted by x places
+#define BIT(x) (1 << x)

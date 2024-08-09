@@ -26,6 +26,7 @@ project "Keela"
 
 	includedirs
 	{
+		"%{prj.name}/src",
 		"%{prj.name}/vender/spdlog/include"
 	}
 
