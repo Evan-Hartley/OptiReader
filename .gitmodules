@@ -1,0 +1,3 @@
+[submodule "Keela/vender/spdlog"]
+	path = Keela/vender/spdlog
+	url = http://github.com/gabime/spdlog
