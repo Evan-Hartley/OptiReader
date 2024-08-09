@@ -18,6 +18,9 @@ project "Keela"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "keepch.h"
+	pchsource "Keela/src/keepch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",

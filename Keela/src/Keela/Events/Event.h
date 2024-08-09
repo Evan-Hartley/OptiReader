@@ -1,9 +1,7 @@
 #pragma once
 
+#include "keepch.h"
 #include "Keela/Core.h"
-
-#include <string>
-#include <functional>
 
 namespace Keela {
 
