@@ -10,6 +10,12 @@ workspace "Keela"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "keela/vender/GLFW/include"
+
+include "Keela/vender/GLFW"
+
 project "Keela"
 	location "Keela"
 	kind "SharedLib"
@@ -30,9 +36,15 @@ project "Keela"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vender/spdlog/include"
+		"%{prj.name}/vender/spdlog/include",
+		"%{IncludeDir.GLFW}"
 	}
 
+	links{
+		"GLFW",
+		"opengl32.lib",
+		"dwmapi.lib"
+	}
 
 	filter "system:windows"
 	cppdialect "C++17"

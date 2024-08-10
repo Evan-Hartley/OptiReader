@@ -12,5 +12,13 @@
 	#error Keela only supports Windows!
 #endif
 
+#ifdef KEE_PLATFORM_WINDOWS
+	#define KEE_ASSERT(x, ...) { if(!(x)) { KEE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define KEE_CORE_ASSERT(x, ...) { if(!(x)) { KEE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#else
+	#define KEE_ASSERT(x, ...)
+	#define KEE_CORE_ASSERT(x, ...)
+#endif
+
 // Define Bit(x) as 1 shifted by x places
 #define BIT(x) (1 << x)

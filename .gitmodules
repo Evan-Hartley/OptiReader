@@ -1,3 +1,6 @@
 [submodule "Keela/vender/spdlog"]
 	path = Keela/vender/spdlog
 	url = http://github.com/gabime/spdlog
+[submodule "Keela/vender/GLFW"]
+	path = Keela/vender/GLFW
+	url = https://github.com/TheCherno/glfw
