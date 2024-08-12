@@ -3,6 +3,8 @@
 #include "keepch.h"
 #include "Keela/Core.h"
 
+#include <spdlog/fmt/ostr.h>
+
 namespace Keela {
 
 	//As it stands Keela currently deals with events by immediately dispatching them
