@@ -4,6 +4,8 @@
 //Includes all necessary files to run a Keela Application
 
 #include "Keela/Application.h"
+#include "spdlog/spdlog.h"
+#include "spdlog/fmt/ostr.h"
 #include "Keela/Log.h"
 
 //---Entry Point--------------------------------------

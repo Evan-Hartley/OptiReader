@@ -4,7 +4,7 @@
 
 #include "Keela/Events/ApplicationEvent.h"
 #include "Keela/Events/MouseEvent.h"
-#include "Keela/Events/keyEvent.h"
+#include "Keela/Events/KeyEvent.h"
 
 
 namespace Keela {
@@ -138,7 +138,7 @@ namespace Keela {
 				data.EventCallback(event);
 			});
 
-		// Mouse Scroll Callback
+		// Mouse Cursor Position Callback
 		glfwSetCursorPosCallback(m_Window, [](GLFWwindow* window, double xPos, double yPos)
 			{
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);

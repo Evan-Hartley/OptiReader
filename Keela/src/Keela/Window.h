@@ -28,7 +28,7 @@ namespace Keela {
 	public:
 		using EventCallbackFn = std::function<void(Event&)>;
 
-		virtual ~Window() {}
+		virtual ~Window() {} ;
 
 		virtual void OnUpdate() = 0;
 
@@ -41,8 +41,6 @@ namespace Keela {
 		virtual bool IsVSync() const = 0;
 
 		static Window* Create(const WindowProps& props = WindowProps());
-
-
 
 	};
 
