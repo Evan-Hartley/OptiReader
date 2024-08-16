@@ -37,6 +37,12 @@
     <ClInclude Include="src\Keela\Events\MouseEvent.h">
       <Filter>Keela\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Keela\Layer.h">
+      <Filter>Keela</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Keela\LayerStack.h">
+      <Filter>Keela</Filter>
+    </ClInclude>
     <ClInclude Include="src\Keela\Log.h">
       <Filter>Keela</Filter>
     </ClInclude>
@@ -50,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Keela\Application.cpp">
+      <Filter>Keela</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Keela\Layer.cpp">
+      <Filter>Keela</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Keela\LayerStack.cpp">
       <Filter>Keela</Filter>
     </ClCompile>
     <ClCompile Include="src\Keela\Log.cpp">

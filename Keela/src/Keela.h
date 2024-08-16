@@ -3,7 +3,8 @@
 //For use by Keela applications
 //Includes all necessary files to run a Keela Application
 
-#include "Keela/Application.h"
+#include "Keela/Application.h"\
+#include "Keela/Layer.h"
 #include "spdlog/spdlog.h"
 #include "spdlog/fmt/ostr.h"
 #include "Keela/Log.h"

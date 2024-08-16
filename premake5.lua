@@ -65,14 +65,20 @@ project "Keela"
 
 	filter "configurations:Debug"
 		defines "KEE_DEBUG"
+		staticruntime "off"
+		runtime"Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "KEE_RELEASE"
+		staticruntime "off"
+		runtime"Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "KEE_DIST"
+		staticruntime "off"
+		runtime"Release"
 		optimize "On"
 
 
@@ -114,12 +120,18 @@ project "KitchenSink"
 
 	filter "configurations:Debug"
 		defines "KEE_DEBUG"
+		staticruntime "off"
+		runtime"Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "KEE_RELEASE"
+		staticruntime "off"
+		runtime"Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "KEE_DIST"
+		staticruntime "off"
+		runtime"Release"
 		optimize "On"
