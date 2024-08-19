@@ -13,8 +13,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "keela/vender/GLFW/include"
+IncludeDir["Glad"] = "keela/vender/Glad/include"
+IncludeDir["ImGui"] = "Keela/vender/imgui"
 
 include "Keela/vender/GLFW"
+include "Keela/vender/Glad"
+include "Keela/vender/imgui"
 
 project "Keela"
 	location "Keela"
@@ -37,11 +41,15 @@ project "Keela"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vender/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}"
 	}
 
 	links{
 		"GLFW",
+		"Glad",
+		"ImGui",
 		"opengl32.lib",
 		"dwmapi.lib"
 	}
@@ -54,7 +62,8 @@ project "Keela"
 	defines
 	{
 		"KEE_PLATFORM_WINDOWS",
-		"KEE_BUILD_DLL"
+		"KEE_BUILD_DLL",
+		"GLFW_INCLUDE_NONE"
 
 	}
 

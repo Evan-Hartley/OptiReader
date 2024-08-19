@@ -79,8 +79,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>keepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>KEE_PLATFORM_WINDOWS;KEE_BUILD_DLL;KEE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vender\spdlog\include;vender\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>KEE_PLATFORM_WINDOWS;KEE_BUILD_DLL;GLFW_INCLUDE_NONE;KEE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vender\spdlog\include;vender\GLFW\include;vender\Glad\include;vender\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -102,8 +102,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>keepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>KEE_PLATFORM_WINDOWS;KEE_BUILD_DLL;KEE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vender\spdlog\include;vender\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>KEE_PLATFORM_WINDOWS;KEE_BUILD_DLL;GLFW_INCLUDE_NONE;KEE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vender\spdlog\include;vender\GLFW\include;vender\Glad\include;vender\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -129,8 +129,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>keepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>KEE_PLATFORM_WINDOWS;KEE_BUILD_DLL;KEE_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vender\spdlog\include;vender\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>KEE_PLATFORM_WINDOWS;KEE_BUILD_DLL;GLFW_INCLUDE_NONE;KEE_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vender\spdlog\include;vender\GLFW\include;vender\Glad\include;vender\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -160,18 +160,22 @@
     <ClInclude Include="src\Keela\Events\Event.h" />
     <ClInclude Include="src\Keela\Events\KeyEvent.h" />
     <ClInclude Include="src\Keela\Events\MouseEvent.h" />
+    <ClInclude Include="src\Keela\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Keela\Layer.h" />
     <ClInclude Include="src\Keela\LayerStack.h" />
     <ClInclude Include="src\Keela\Log.h" />
     <ClInclude Include="src\Keela\Window.h" />
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRender.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\keepch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Keela\Application.cpp" />
+    <ClCompile Include="src\Keela\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Keela\Layer.cpp" />
     <ClCompile Include="src\Keela\LayerStack.cpp" />
     <ClCompile Include="src\Keela\Log.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRender.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\keepch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
@@ -180,6 +184,12 @@
   <ItemGroup>
     <ProjectReference Include="vender\GLFW\GLFW.vcxproj">
       <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vender\Glad\Glad.vcxproj">
+      <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vender\imgui\ImGui.vcxproj">
+      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

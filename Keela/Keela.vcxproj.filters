@@ -7,8 +7,14 @@
     <Filter Include="Keela\Events">
       <UniqueIdentifier>{2BE6945A-1749-24FF-C0CE-5CB5AC10F081}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Keela\ImGui">
+      <UniqueIdentifier>{910276D4-FDB7-EEC9-86AC-E8A0F260E5CD}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\OpenGL">
+      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Platform\Windows">
       <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
@@ -37,6 +43,9 @@
     <ClInclude Include="src\Keela\Events\MouseEvent.h">
       <Filter>Keela\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Keela\ImGui\ImGuiLayer.h">
+      <Filter>Keela\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\Keela\Layer.h">
       <Filter>Keela</Filter>
     </ClInclude>
@@ -49,6 +58,9 @@
     <ClInclude Include="src\Keela\Window.h">
       <Filter>Keela</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRender.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
@@ -58,6 +70,9 @@
     <ClCompile Include="src\Keela\Application.cpp">
       <Filter>Keela</Filter>
     </ClCompile>
+    <ClCompile Include="src\Keela\ImGui\ImGuiLayer.cpp">
+      <Filter>Keela\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="src\Keela\Layer.cpp">
       <Filter>Keela</Filter>
     </ClCompile>
@@ -66,6 +81,9 @@
     </ClCompile>
     <ClCompile Include="src\Keela\Log.cpp">
       <Filter>Keela</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRender.cpp">
+      <Filter>Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>

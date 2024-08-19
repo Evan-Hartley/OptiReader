@@ -8,6 +8,7 @@
 #include "spdlog/spdlog.h"
 #include "spdlog/fmt/ostr.h"
 #include "Keela/Log.h"
+#include "Keela/ImGui/ImGuiLayer.h"
 
 //---Entry Point--------------------------------------
 #include "Keela/EntryPoint.h"

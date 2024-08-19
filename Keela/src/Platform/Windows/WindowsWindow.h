@@ -4,7 +4,8 @@
 #include "Keela/Log.h"
 #include "Keela/Core.h"
 
-#include <GLFW/glfw3.h>
+#include "GLFW/glfw3.h"
+#include <glad/glad.h>
 
 namespace Keela
 {
@@ -28,7 +29,6 @@ namespace Keela
 		virtual void Shutdown();
 	private:
 		GLFWwindow* m_Window;
-
 		//Groups all our window data together
 		struct WindowData
 		{

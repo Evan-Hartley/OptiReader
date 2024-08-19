@@ -27,6 +27,7 @@ public:
 	KitchenSink()
 	{
 		PushLayer(new ExampleLayer());
+		PushOverlay(new Keela::ImGuiLayer());
 	}
 
 	~KitchenSink()
