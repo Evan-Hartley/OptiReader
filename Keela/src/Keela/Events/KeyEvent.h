@@ -62,4 +62,22 @@ namespace Keela {
 
 		EVENT_CLASS_TYPE(KeyReleased)
 	};
+
+	//---- KeyTypedEvent ------------------------------------------------------------------------------
+	class KEELA_API KeyTypedEvent : public KeyEvent
+	{
+	public:
+		KeyTypedEvent(int keycode)
+			: KeyEvent(keycode) {}
+
+		std::string ToString() const override
+		{
+			std::stringstream ss;
+			ss << "keyTypedEvent: " << m_KeyCode;
+			return ss.str();
+		}
+
+		EVENT_CLASS_TYPE(KeyTyped)
+
+	};
 }

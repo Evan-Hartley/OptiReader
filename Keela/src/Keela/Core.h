@@ -22,3 +22,5 @@
 
 // Define Bit(x) as 1 shifted by x places
 #define BIT(x) (1 << x)
+
+#define KEE_BIND_EVENTS_FN(fn) std::bind(&fn, this, std::placeholders::_1)
