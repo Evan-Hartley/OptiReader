@@ -46,6 +46,9 @@
     <ClInclude Include="src\Keela\ImGui\ImGuiLayer.h">
       <Filter>Keela\ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="src\Keela\Input.h">
+      <Filter>Keela</Filter>
+    </ClInclude>
     <ClInclude Include="src\Keela\Layer.h">
       <Filter>Keela</Filter>
     </ClInclude>
@@ -60,6 +63,9 @@
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRender.h">
       <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h">
+      <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
@@ -84,6 +90,9 @@
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRender.cpp">
       <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
+      <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>

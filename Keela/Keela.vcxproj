@@ -94,7 +94,7 @@
       <ImportLibrary>..\bin\Debug-windows-x86_64\Keela\Keela.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>copy /B /Y ..\bin\Debug-windows-x86_64\Keela\Keela.dll ..\bin\Debug-windows-x86_64\KitchenSink</Command>
+      <Command>IF EXIST ..\bin\Debug-windows-x86_64\Keela\Keela.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\Keela\Keela.dll "..\bin\Debug-windows-x86_64\KitchenSink\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\Keela\Keela.dll "..\bin\Debug-windows-x86_64\KitchenSink\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -121,7 +121,7 @@
       <ImportLibrary>..\bin\Release-windows-x86_64\Keela\Keela.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>copy /B /Y ..\bin\Release-windows-x86_64\Keela\Keela.dll ..\bin\Release-windows-x86_64\KitchenSink</Command>
+      <Command>IF EXIST ..\bin\Release-windows-x86_64\Keela\Keela.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\Keela\Keela.dll "..\bin\Release-windows-x86_64\KitchenSink\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\Keela\Keela.dll "..\bin\Release-windows-x86_64\KitchenSink\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
@@ -148,7 +148,7 @@
       <ImportLibrary>..\bin\Dist-windows-x86_64\Keela\Keela.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>copy /B /Y ..\bin\Dist-windows-x86_64\Keela\Keela.dll ..\bin\Dist-windows-x86_64\KitchenSink</Command>
+      <Command>IF EXIST ..\bin\Dist-windows-x86_64\Keela\Keela.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\Keela\Keela.dll "..\bin\Dist-windows-x86_64\KitchenSink\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\Keela\Keela.dll "..\bin\Dist-windows-x86_64\KitchenSink\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -161,11 +161,13 @@
     <ClInclude Include="src\Keela\Events\KeyEvent.h" />
     <ClInclude Include="src\Keela\Events\MouseEvent.h" />
     <ClInclude Include="src\Keela\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\Keela\Input.h" />
     <ClInclude Include="src\Keela\Layer.h" />
     <ClInclude Include="src\Keela\LayerStack.h" />
     <ClInclude Include="src\Keela\Log.h" />
     <ClInclude Include="src\Keela\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRender.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\keepch.h" />
   </ItemGroup>
@@ -176,6 +178,7 @@
     <ClCompile Include="src\Keela\LayerStack.cpp" />
     <ClCompile Include="src\Keela\Log.cpp" />
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRender.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\keepch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>

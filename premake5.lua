@@ -1,5 +1,6 @@
 workspace "Keela"
 	architecture "x64"
+	startproject "KitchenSink"
 
 	configurations
 	{	
@@ -12,13 +13,19 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
-IncludeDir["GLFW"] = "keela/vender/GLFW/include"
-IncludeDir["Glad"] = "keela/vender/Glad/include"
+IncludeDir["GLFW"] = "Keela/vender/GLFW/include"
+IncludeDir["Glad"] = "Keela/vender/Glad/include"
 IncludeDir["ImGui"] = "Keela/vender/imgui"
 
 include "Keela/vender/GLFW"
 include "Keela/vender/Glad"
 include "Keela/vender/imgui"
+
+group "Dependencies"
+	include "Keela/vender/GLFW"
+	include "Keela/vender/Glad"
+	include "Keela/vender/imgui"
+group ""
 
 project "Keela"
 	location "Keela"
@@ -69,7 +76,7 @@ project "Keela"
 
 	postbuildcommands
 	{
-	 ("{COPYFILE} %{cfg.buildtarget.relpath} ../bin/" ..outputdir .. "/KitchenSink")
+		("{COPY} %{cfg.buildtarget.relpath} \"../bin/" ..outputdir .. "/KitchenSink/\"")
 	}
 
 	filter "configurations:Debug"

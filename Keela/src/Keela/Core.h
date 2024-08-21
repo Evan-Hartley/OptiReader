@@ -12,7 +12,11 @@
 	#error Keela only supports Windows!
 #endif
 
-#ifdef KEE_PLATFORM_WINDOWS
+#ifdef KEE_DEBUG
+	#define KEE_ENABLE_ASSERTS
+#endif
+
+#ifdef KEE_ENABLE_ASSERTS
 	#define KEE_ASSERT(x, ...) { if(!(x)) { KEE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
 	#define KEE_CORE_ASSERT(x, ...) { if(!(x)) { KEE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
 #else

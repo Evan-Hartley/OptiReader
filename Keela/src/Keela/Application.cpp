@@ -8,6 +8,8 @@
 
 #include <glad/glad.h>
 
+#include "Input.h"
+
 namespace Keela {
 
 #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
@@ -69,6 +71,9 @@ namespace Keela {
 			{
 				layer->OnUpdate();
 			}
+
+			auto [x, y] = Input::GetMousePosition();
+			KEE_CORE_TRACE("{0}, {1}", x, y);
 
 			m_Window->OnUpdate();
 		}
