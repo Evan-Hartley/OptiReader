@@ -49,6 +49,9 @@
     <ClInclude Include="src\Keela\Input.h">
       <Filter>Keela</Filter>
     </ClInclude>
+    <ClInclude Include="src\Keela\Keycode.h">
+      <Filter>Keela</Filter>
+    </ClInclude>
     <ClInclude Include="src\Keela\Layer.h">
       <Filter>Keela</Filter>
     </ClInclude>
@@ -56,6 +59,9 @@
       <Filter>Keela</Filter>
     </ClInclude>
     <ClInclude Include="src\Keela\Log.h">
+      <Filter>Keela</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Keela\MouseButtonCodes.h">
       <Filter>Keela</Filter>
     </ClInclude>
     <ClInclude Include="src\Keela\Window.h">

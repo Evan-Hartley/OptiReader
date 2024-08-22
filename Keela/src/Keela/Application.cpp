@@ -47,7 +47,7 @@ namespace Keela {
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
 
-		KEE_CORE_TRACE("{0}", e);
+		//KEE_CORE_TRACE("{0}", e);
 
 		// Move backwards through the layer stack for events to be processed
 		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin(); )
@@ -72,8 +72,8 @@ namespace Keela {
 				layer->OnUpdate();
 			}
 
-			auto [x, y] = Input::GetMousePosition();
-			KEE_CORE_TRACE("{0}, {1}", x, y);
+			//auto [x, y] = Input::GetMousePosition();
+			//KEE_CORE_TRACE("{0}, {1}", x, y);
 
 			m_Window->OnUpdate();
 		}

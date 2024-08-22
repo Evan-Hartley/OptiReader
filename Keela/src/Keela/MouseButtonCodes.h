@@ -1,0 +1,17 @@
+#pragma once
+
+// From glfw3.h
+
+//Mouse Button Codes
+#define KEE_MOUSE_BUTTON_1         0
+#define KEE_MOUSE_BUTTON_2         1
+#define KEE_MOUSE_BUTTON_3         2
+#define KEE_MOUSE_BUTTON_4         3
+#define KEE_MOUSE_BUTTON_5         4
+#define KEE_MOUSE_BUTTON_6         5
+#define KEE_MOUSE_BUTTON_7         6
+#define KEE_MOUSE_BUTTON_8         7
+#define KEE_MOUSE_BUTTON_LAST      KEE_MOUSE_BUTTON_8
+#define KEE_MOUSE_BUTTON_LEFT      KEE_MOUSE_BUTTON_1
+#define KEE_MOUSE_BUTTON_RIGHT     KEE_MOUSE_BUTTON_2
+#define KEE_MOUSE_BUTTON_MIDDLE    KEE_MOUSE_BUTTON_3

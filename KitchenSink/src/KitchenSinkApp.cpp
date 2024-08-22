@@ -11,12 +11,21 @@ public:
 
 	void OnUpdate() override
 	{
-		KEE_INFO("ExampleLayer::Update");
+		//KEE_INFO("ExampleLayer::Update");
+
 	}
 
 	void OnEvent(Keela::Event& event) override
 	{
-		KEE_TRACE("{0}", event);
+		if (event.GetEventType() == Keela::EventType::KeyPressed)
+		{
+			Keela::KeyPressedEvent& e = (Keela::KeyPressedEvent&)event;
+			if (e.GetKeyCode() == KEE_KEY_TAB)
+			{
+				KEE_TRACE("Tab key is pressed!");
+			}
+			KEE_TRACE("{Tab key is pressed!}0}", (char)e.GetKeyCode());
+		}
 	}
 
 };

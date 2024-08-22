@@ -162,9 +162,11 @@
     <ClInclude Include="src\Keela\Events\MouseEvent.h" />
     <ClInclude Include="src\Keela\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Keela\Input.h" />
+    <ClInclude Include="src\Keela\Keycode.h" />
     <ClInclude Include="src\Keela\Layer.h" />
     <ClInclude Include="src\Keela\LayerStack.h" />
     <ClInclude Include="src\Keela\Log.h" />
+    <ClInclude Include="src\Keela\MouseButtonCodes.h" />
     <ClInclude Include="src\Keela\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRender.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
