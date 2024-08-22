@@ -16,10 +16,12 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Keela/vender/GLFW/include"
 IncludeDir["Glad"] = "Keela/vender/Glad/include"
 IncludeDir["ImGui"] = "Keela/vender/imgui"
+IncludeDir["glm"] = "Keela/vender/glm"
 
 include "Keela/vender/GLFW"
 include "Keela/vender/Glad"
 include "Keela/vender/imgui"
+
 
 group "Dependencies"
 	include "Keela/vender/GLFW"
@@ -41,7 +43,9 @@ project "Keela"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vender/glm/glm/**.hpp",
+		"%{prj.name}/vender/glm/glm/**.inl"
 	}
 
 	includedirs
@@ -50,7 +54,8 @@ project "Keela"
 		"%{prj.name}/vender/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
 	}
 
 	links{
@@ -115,7 +120,8 @@ project "KitchenSink"
 	includedirs
 	{
 		"Keela/vender/spdlog/include",
-		"Keela/src"
+		"Keela/src",
+		"%{IncludeDir.glm}"
 	}
 
 	links
