@@ -1,5 +1,7 @@
 #include <Keela.h>
 
+#include "imgui/imgui.h"
+
 class ExampleLayer : public Keela::Layer
 {
 public:
@@ -13,6 +15,13 @@ public:
 	{
 		//KEE_INFO("ExampleLayer::Update");
 
+	}
+
+	virtual void OnImGuiRender() override
+	{
+		ImGui::Begin("Test");
+		ImGui::Text("Hello world");
+		ImGui::End();
 	}
 
 	void OnEvent(Keela::Event& event) override
@@ -36,7 +45,6 @@ public:
 	KitchenSink()
 	{
 		PushLayer(new ExampleLayer());
-		PushOverlay(new Keela::ImGuiLayer());
 	}
 
 	~KitchenSink()

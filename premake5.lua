@@ -121,7 +121,8 @@ project "KitchenSink"
 	{
 		"Keela/vender/spdlog/include",
 		"Keela/src",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"Keela/vender/"
 	}
 
 	links

@@ -7,6 +7,8 @@
 #include "Window.h"
 #include "Keela/LayerStack.h"
 
+#include "Keela/ImGui/ImGuiLayer.h"
+
 namespace Keela {
 
 	class KEELA_API Application
@@ -31,6 +33,7 @@ namespace Keela {
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 	private:
