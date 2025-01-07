@@ -19,7 +19,7 @@ void ImGui::ShowControlWindow(bool* p_open)
 
     IMGUI_CHECKVERSION();
 
-    static bool no_titlebar = false, no_scrollbar = false, no_menu = false, no_move = false;
+    static bool no_titlebar = false, no_scrollbar = false, no_menu = true, no_move = false;
     static bool no_resize = false, no_collapse = false, no_close = false, no_nav = false;
     static bool no_background = false, no_bring_to_front = false, no_docking = false, unsaved_document = false;
 
@@ -143,7 +143,9 @@ void ShowDataVisualizationSection()
     static bool traces = false;
     ImGui::Checkbox("Show Traces", &traces);
 
-    ImGui::ShowTraceWindow(&traces);
+    if (traces) {
+        ImGui::ShowTraceWindow(&traces);
+    }
 }
 
 void ShowTroubleShootingSection()

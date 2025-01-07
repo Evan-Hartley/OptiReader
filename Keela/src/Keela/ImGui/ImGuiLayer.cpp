@@ -46,7 +46,7 @@ namespace Keela {
 		ImGuiStyle& style = ImGui::GetStyle();
 		if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
 		{
-			style.WindowRounding = 0.0f;
+			style.WindowRounding = 4.0f;
 			style.Colors[ImGuiCol_Text] = ImVec4(0.2f, 0.2f, 0.2f, 1.00f); // Base Text is off black
 			style.Colors[ImGuiCol_WindowBg] = ImVec4(1.0f, 1.0f, 1.0f, 1.00f); // Internal Windows Are White
 			style.Colors[ImGuiCol_MenuBarBg] = ImVec4(0.75f, 0.45f, 0.27f, 1.00f); // Menu Bar for Internal Windows is Brown Rust
@@ -55,8 +55,8 @@ namespace Keela {
 			style.Colors[ImGuiCol_FrameBg] = ImVec4(0.98f, 0.94f, 0.8f, 1.00f); // Variable Framing Is Champagne
 			style.Colors[ImGuiCol_FrameBgHovered] = ImVec4(0.75f, 0.45f, 0.27f, 1.00f); // Variable Framing Is Brown Rust When Hovering
 			style.Colors[ImGuiCol_FrameBgActive] = ImVec4(0.98f, 0.94f, 0.8f, 1.00f); // Variable Framing Is Champagne When Selected
-			style.Colors[ImGuiCol_TitleBg] = ImVec4(0.98f, 0.94f, 0.8f, 1.00f); // Title Bar is Champagne
-			style.Colors[ImGuiCol_TitleBgCollapsed] = ImVec4(0.98f, 0.94f, 0.8f, 1.00f); // Title Bar is Champagne
+			style.Colors[ImGuiCol_TitleBg] = ImVec4(0.98f, 0.88f, 0.51f, 1.00f); // Title Bar is Sweet Corn
+			style.Colors[ImGuiCol_TitleBgCollapsed] = ImVec4(0.98f, 0.88f, 0.51f, 1.00f); // Title Bar is Seet Corn
 			style.Colors[ImGuiCol_ScrollbarBg] = ImVec4(0.40f, 0.62f, 0.80f, 0.15f);
 			style.Colors[ImGuiCol_ScrollbarGrab] = ImVec4(0.39f, 0.64f, 0.80f, 0.30f);
 			style.Colors[ImGuiCol_ScrollbarGrabHovered] = ImVec4(0.28f, 0.67f, 0.80f, 0.59f);
@@ -73,7 +73,7 @@ namespace Keela {
 			style.Colors[ImGuiCol_ResizeGripHovered] = ImVec4(1.00f, 1.00f, 1.00f, 0.60f);
 			//style.Colors[ImGuiCol_ComboBg] = ImVec4(0.98f, 0.94f, 0.8f, 0.99f); // Color for Dropdown Selections is Champagne
 			style.Colors[ImGuiCol_ResizeGripActive] = ImVec4(1.00f, 1.00f, 1.00f, 0.90f);
-			style.Colors[ImGuiCol_TextSelectedBg] = ImVec4(0.98f, 0.88f, 0.51f, 0.43f); // Selected Text is Sweet Corn
+			style.Colors[ImGuiCol_TextSelectedBg] = ImVec4(0.98f, 0.88f, 0.51f, 0.8f); // Selected Text is Sweet Corn
 			style.Colors[ImGuiCol_TextSelectedBg] = ImVec4(0.98f, 0.94f, 0.8f, 0.35f); // Text Select is Champagne
 			style.Alpha = 1.0f;
 			style.FrameRounding = 4;
@@ -81,6 +81,12 @@ namespace Keela {
 
 
 		}
+
+		// Add a new font with the desired size, e.g., 18.0f
+		io.Fonts->AddFontFromFileTTF("BrassMonoBold.ttf", 24.0f);
+
+		// Ensure the font atlas is built with the new font size
+		io.Fonts->Build();
 
 		Application& app = Application::Get();
 		GLFWwindow* window = static_cast<GLFWwindow*>(app.GetWindow().GetNativeWindow());

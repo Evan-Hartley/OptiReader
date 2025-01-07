@@ -1,0 +1,15 @@
+Internal Info
+copyright
+Copyright 2017 The Brass Mono Project Authors (github.com/fonsecapeter/brass_mono)
+license
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL
+licenseUrl
+http://scripts.sil.org/OFL
+version
+Version 1.000; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D latn -f none -R "BrassMono-Regular.ttf" -Z 0 -a qsq -X ""
+148 codepoints in 143 glyphs
+Supported Character Sets
+fsmin
+0 Opentype Features
+25 Supported Languages
+en-Latn id-Latn sw-Latn fil-Latn om-Latn ms-Latn so-Latn zu-Latn sn-Latn rw-Latn xh-Latn rn-Latn luy-Latn bem-Latn luo-Latn kln-Latn nyn-Latn guz-Latn cgg-Latn xog-Latn teo-Latn nd-Latn kde-Latn mfe-Latn mgh-Latn
