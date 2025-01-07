@@ -13,18 +13,21 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
-IncludeDir["GLFW"] = "Keela/vender/GLFW/include"
+IncludeDir["GLFW"] = "Keela/vender/glfw/include"
 IncludeDir["Glad"] = "Keela/vender/Glad/include"
 IncludeDir["ImGui"] = "Keela/vender/imgui"
 IncludeDir["glm"] = "Keela/vender/glm"
+IncludeDir["stb"] = "Keela/vender/stb"
+IncludeDir["BrassMono"] = "Keela/vender/brass-mono-font"
 
-include "Keela/vender/GLFW"
+
+include "Keela/vender/glfw"
 include "Keela/vender/Glad"
 include "Keela/vender/imgui"
 
 
 group "Dependencies"
-	include "Keela/vender/GLFW"
+	include "Keela/vender/glfw"
 	include "Keela/vender/Glad"
 	include "Keela/vender/imgui"
 group ""
@@ -45,7 +48,9 @@ project "Keela"
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
 		"%{prj.name}/vender/glm/glm/**.hpp",
-		"%{prj.name}/vender/glm/glm/**.inl"
+		"%{prj.name}/vender/glm/glm/**.inl",
+		"%{prj.name}/vender/brass-mono-font/**.ttf",
+		"K%{prj.name}/vender/stb/stb_image.h"
 	}
 
 	includedirs
@@ -55,7 +60,9 @@ project "Keela"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb}",
+		"%{IncludeDir.BrassMono}"
 	}
 
 	links{
@@ -122,6 +129,7 @@ project "KitchenSink"
 		"Keela/vender/spdlog/include",
 		"Keela/src",
 		"%{IncludeDir.glm}",
+		"%{IncludeDir.BrassMono}",
 		"Keela/vender/"
 	}
 

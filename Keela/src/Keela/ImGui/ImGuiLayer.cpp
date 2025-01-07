@@ -1,5 +1,6 @@
 #include "keepch.h"
 #include "ImGuiLayer.h"
+#include "ControlWindow.h"
 
 #include "imgui.h"
 
@@ -39,14 +40,46 @@ namespace Keela {
 		//io.ConfigFlags |= ImGuiConfigFlags_ViewportsNoMerge;
 
 		// Setup Dear ImGui Style
-		ImGui::StyleColorsClassic();
+		ImGui::StyleColorsLight();
 
 		//When viewpoerts are enabled we tweak WindowRounding/WindowBg so platform windows ca look identical to each other
 		ImGuiStyle& style = ImGui::GetStyle();
 		if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
 		{
 			style.WindowRounding = 0.0f;
-			style.Colors[ImGuiCol_WindowBg].w = 1.0f;
+			style.Colors[ImGuiCol_Text] = ImVec4(0.2f, 0.2f, 0.2f, 1.00f); // Base Text is off black
+			style.Colors[ImGuiCol_WindowBg] = ImVec4(1.0f, 1.0f, 1.0f, 1.00f); // Internal Windows Are White
+			style.Colors[ImGuiCol_MenuBarBg] = ImVec4(0.75f, 0.45f, 0.27f, 1.00f); // Menu Bar for Internal Windows is Brown Rust
+			style.Colors[ImGuiCol_Border] = ImVec4(0.49f, 0.02f, 0.02f, 1.00f); // Border for Internal Windows is Dark Burgundy
+			style.Colors[ImGuiCol_BorderShadow] = ImVec4(0.00f, 0.00f, 0.00f, 0.00f); //Boarder for Internal Windows has no shadow
+			style.Colors[ImGuiCol_FrameBg] = ImVec4(0.98f, 0.94f, 0.8f, 1.00f); // Variable Framing Is Champagne
+			style.Colors[ImGuiCol_FrameBgHovered] = ImVec4(0.75f, 0.45f, 0.27f, 1.00f); // Variable Framing Is Brown Rust When Hovering
+			style.Colors[ImGuiCol_FrameBgActive] = ImVec4(0.98f, 0.94f, 0.8f, 1.00f); // Variable Framing Is Champagne When Selected
+			style.Colors[ImGuiCol_TitleBg] = ImVec4(0.98f, 0.94f, 0.8f, 1.00f); // Title Bar is Champagne
+			style.Colors[ImGuiCol_TitleBgCollapsed] = ImVec4(0.98f, 0.94f, 0.8f, 1.00f); // Title Bar is Champagne
+			style.Colors[ImGuiCol_ScrollbarBg] = ImVec4(0.40f, 0.62f, 0.80f, 0.15f);
+			style.Colors[ImGuiCol_ScrollbarGrab] = ImVec4(0.39f, 0.64f, 0.80f, 0.30f);
+			style.Colors[ImGuiCol_ScrollbarGrabHovered] = ImVec4(0.28f, 0.67f, 0.80f, 0.59f);
+			style.Colors[ImGuiCol_ScrollbarGrabActive] = ImVec4(0.25f, 0.48f, 0.53f, 0.67f);
+			style.Colors[ImGuiCol_CheckMark] = ImVec4(0.48f, 0.47f, 0.47f, 0.71f);
+			style.Colors[ImGuiCol_SliderGrabActive] = ImVec4(0.31f, 0.47f, 0.99f, 1.00f);
+			style.Colors[ImGuiCol_Button] = ImVec4(1.00f, 0.79f, 0.18f, 0.78f);
+			style.Colors[ImGuiCol_ButtonHovered] = ImVec4(0.42f, 0.82f, 1.00f, 0.81f);
+			style.Colors[ImGuiCol_ButtonActive] = ImVec4(0.72f, 1.00f, 1.00f, 0.86f);
+			style.Colors[ImGuiCol_Header] = ImVec4(0.49f, 0.02f, 0.02f, 1.0f); // Header is Dark Burgandy
+			style.Colors[ImGuiCol_HeaderHovered] = ImVec4(0.75f, 0.45f, 0.27f, 1.0f); // Header is Brown Rust When Hovered
+			style.Colors[ImGuiCol_HeaderActive] = ImVec4(0.49f, 0.02f, 0.02f, 1.0f); // Header is Dark Burgandy When Active
+			style.Colors[ImGuiCol_ResizeGrip] = ImVec4(0.60f, 0.60f, 0.80f, 0.30f);
+			style.Colors[ImGuiCol_ResizeGripHovered] = ImVec4(1.00f, 1.00f, 1.00f, 0.60f);
+			//style.Colors[ImGuiCol_ComboBg] = ImVec4(0.98f, 0.94f, 0.8f, 0.99f); // Color for Dropdown Selections is Champagne
+			style.Colors[ImGuiCol_ResizeGripActive] = ImVec4(1.00f, 1.00f, 1.00f, 0.90f);
+			style.Colors[ImGuiCol_TextSelectedBg] = ImVec4(0.98f, 0.88f, 0.51f, 0.43f); // Selected Text is Sweet Corn
+			style.Colors[ImGuiCol_TextSelectedBg] = ImVec4(0.98f, 0.94f, 0.8f, 0.35f); // Text Select is Champagne
+			style.Alpha = 1.0f;
+			style.FrameRounding = 4;
+			style.IndentSpacing = 12.0f;
+
+
 		}
 
 		Application& app = Application::Get();
@@ -99,6 +132,6 @@ namespace Keela {
 	void ImGuiLayer::OnImGuiRender()
 	{
 		static bool show = true;
-		ImGui::ShowDemoWindow(&show);
+		ImGui::ShowControlWindow(&show);
 	}
 }

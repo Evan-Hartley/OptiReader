@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="KKeela">
+      <UniqueIdentifier>{F23758BC-DED9-8292-C794-96E6B3D509E3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="KKeela\vender">
+      <UniqueIdentifier>{C528E320-31E9-5E57-FA23-A8D466A3A333}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="KKeela\vender\stb">
+      <UniqueIdentifier>{9DC13FBC-09D8-3D52-524F-C973BEA40EDA}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src">
       <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
@@ -42,6 +51,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\KKeela\vender\stb\stb_image.h">
+      <Filter>KKeela\vender\stb</Filter>
+    </ClInclude>
     <ClInclude Include="src\Keela.h">
       <Filter>src</Filter>
     </ClInclude>
@@ -66,7 +78,16 @@
     <ClInclude Include="src\Keela\Events\MouseEvent.h">
       <Filter>src\Keela\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Keela\ImGui\CameraWindow.h">
+      <Filter>src\Keela\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Keela\ImGui\ControlWindow.h">
+      <Filter>src\Keela\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\Keela\ImGui\ImGuiLayer.h">
+      <Filter>src\Keela\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Keela\ImGui\TraceWindow.h">
       <Filter>src\Keela\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="src\Keela\Input.h">
@@ -1352,10 +1373,19 @@
     <ClCompile Include="src\Keela\Application.cpp">
       <Filter>src\Keela</Filter>
     </ClCompile>
+    <ClCompile Include="src\Keela\ImGui\CameraWindow.cpp">
+      <Filter>src\Keela\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Keela\ImGui\ControlWindow.cpp">
+      <Filter>src\Keela\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="src\Keela\ImGui\ImGuiBuild.cpp">
       <Filter>src\Keela\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Keela\ImGui\ImGuiLayer.cpp">
+      <Filter>src\Keela\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Keela\ImGui\TraceWindow.cpp">
       <Filter>src\Keela\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Keela\Layer.cpp">

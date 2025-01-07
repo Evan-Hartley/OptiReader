@@ -19,9 +19,9 @@ public:
 
 	virtual void OnImGuiRender() override
 	{
-		ImGui::Begin("Test");
-		ImGui::Text("Hello world");
-		ImGui::End();
+		//ImGui::Begin("Test");
+		//ImGui::Text("Development Demo Window");
+		//ImGui::End();
 	}
 
 	void OnEvent(Keela::Event& event) override

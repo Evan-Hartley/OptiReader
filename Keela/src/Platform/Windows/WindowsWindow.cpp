@@ -6,8 +6,11 @@
 #include "Keela/Events/MouseEvent.h"
 #include "Keela/Events/KeyEvent.h"
 
-#include <glad/glad.h>
+#include <Glad/glad.h>
 #include <GLFW/glfw3.h>
+
+#define STB_IMAGE_IMPLEMENTATION
+#include <stb_image.h>
 
 namespace Keela {
 
@@ -56,6 +59,26 @@ namespace Keela {
 		KEE_CORE_ASSERT(status, "Failed to  initialise Glad!");
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
+
+		// Load icon image using stb_image
+		int iconWidth, iconHeight, iconChannels;
+		stbi_uc* iconPixels = stbi_load("KeelaIcon.png", &iconWidth, &iconHeight, &iconChannels, 4); // 4 for RGBA
+
+		if (iconPixels)
+		{
+			GLFWimage icon;
+			icon.width = iconWidth;
+			icon.height = iconHeight;
+			icon.pixels = iconPixels;
+			glfwSetWindowIcon(m_Window, 1, &icon);
+
+			// Free the image memory after setting the icon
+			stbi_image_free(iconPixels);
+		}
+		else
+		{
+			KEE_CORE_WARN("Failed to load window icon.");
+		}
 
 		// ---- Set GLFW Callbacks ------------------------------------------------------------------------------------
 		// Window Size Callback

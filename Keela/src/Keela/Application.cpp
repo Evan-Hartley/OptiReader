@@ -67,7 +67,7 @@ namespace Keela {
 	{
 		while (m_Running)
 		{
-			glClearColor(0.1, 0.8, 0.7, 1);
+			glClearColor(0.98, 0.88, 0.51, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
 
 			for (Layer* layer : m_LayerStack)
