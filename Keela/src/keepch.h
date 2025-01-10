@@ -13,6 +13,11 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
 #ifdef KEE_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif

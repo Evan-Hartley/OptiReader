@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="KKeela">
-      <UniqueIdentifier>{F23758BC-DED9-8292-C794-96E6B3D509E3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="KKeela\vender">
-      <UniqueIdentifier>{C528E320-31E9-5E57-FA23-A8D466A3A333}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="KKeela\vender\stb">
-      <UniqueIdentifier>{9DC13FBC-09D8-3D52-524F-C973BEA40EDA}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src">
       <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
@@ -31,6 +22,12 @@
     <Filter Include="vender">
       <UniqueIdentifier>{69728122-5514-ACF8-3ECF-BF4C2A103349}</UniqueIdentifier>
     </Filter>
+    <Filter Include="vender\ImPlot">
+      <UniqueIdentifier>{0D674933-7927-C569-4262-0EE7AEE10946}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vender\ImPlot\.github">
+      <UniqueIdentifier>{8DEF0F95-F95B-CB8F-C24F-63ED2E7BEDF7}</UniqueIdentifier>
+    </Filter>
     <Filter Include="vender\glm">
       <UniqueIdentifier>{38097291-24C1-B3DE-8DC8-8C3A799F4ECF}</UniqueIdentifier>
     </Filter>
@@ -49,11 +46,11 @@
     <Filter Include="vender\glm\glm\gtx">
       <UniqueIdentifier>{6966251B-554A-E670-BEAA-E0C3AAADD0F2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="vender\stb">
+      <UniqueIdentifier>{413D7291-2DF5-B3DE-96FC-8C3A82D34ECF}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\KKeela\vender\stb\stb_image.h">
-      <Filter>KKeela\vender\stb</Filter>
-    </ClInclude>
     <ClInclude Include="src\Keela.h">
       <Filter>src</Filter>
     </ClInclude>
@@ -119,6 +116,12 @@
     </ClInclude>
     <ClInclude Include="src\keepch.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="vender\ImPlot\implot.h">
+      <Filter>vender\ImPlot</Filter>
+    </ClInclude>
+    <ClInclude Include="vender\ImPlot\implot_internal.h">
+      <Filter>vender\ImPlot</Filter>
     </ClInclude>
     <ClInclude Include="vender\glm\glm\common.hpp">
       <Filter>vender\glm\glm</Filter>
@@ -1368,6 +1371,9 @@
     <ClInclude Include="vender\glm\glm\vector_relational.hpp">
       <Filter>vender\glm\glm</Filter>
     </ClInclude>
+    <ClInclude Include="vender\stb\stb_image.h">
+      <Filter>vender\stb</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Keela\Application.cpp">
@@ -1405,6 +1411,18 @@
     </ClCompile>
     <ClCompile Include="src\keepch.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="vender\ImPlot\.github\example_implot.cpp">
+      <Filter>vender\ImPlot\.github</Filter>
+    </ClCompile>
+    <ClCompile Include="vender\ImPlot\implot.cpp">
+      <Filter>vender\ImPlot</Filter>
+    </ClCompile>
+    <ClCompile Include="vender\ImPlot\implot_demo.cpp">
+      <Filter>vender\ImPlot</Filter>
+    </ClCompile>
+    <ClCompile Include="vender\ImPlot\implot_items.cpp">
+      <Filter>vender\ImPlot</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

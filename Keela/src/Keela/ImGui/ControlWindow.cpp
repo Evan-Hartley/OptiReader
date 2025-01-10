@@ -1,8 +1,11 @@
 #include "keepch.h"
+
 #include "ControlWindow.h"
 #include "CameraWindow.h"
 #include "TraceWindow.h"
 #include "imgui.h"
+#include "implot.h"
+#include "implot_internal.h"
 
 using Matrix = std::vector<std::vector<int>>;
 

@@ -7,3 +7,6 @@
 [submodule "Keela/vender/glm"]
 	path = Keela/vender/glm
 	url = https://github.com/g-truc/glm/
+[submodule "Keela/vender/ImPlot"]
+	path = Keela/vender/ImPlot
+	url = https://github.com/epezent/implot.git

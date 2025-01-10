@@ -16,6 +16,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Keela/vender/glfw/include"
 IncludeDir["Glad"] = "Keela/vender/Glad/include"
 IncludeDir["ImGui"] = "Keela/vender/imgui"
+IncludeDir["ImPlot"] = "Keela/vender/ImPlot"
 IncludeDir["glm"] = "Keela/vender/glm"
 IncludeDir["stb"] = "Keela/vender/stb"
 IncludeDir["BrassMono"] = "Keela/vender/brass-mono-font"
@@ -50,7 +51,9 @@ project "Keela"
 		"%{prj.name}/vender/glm/glm/**.hpp",
 		"%{prj.name}/vender/glm/glm/**.inl",
 		"%{prj.name}/vender/brass-mono-font/**.ttf",
-		"K%{prj.name}/vender/stb/stb_image.h"
+		"%{prj.name}/vender/stb/stb_image.h",
+		"%{prj.name}/vender/ImPlot/**.h",
+		"%{prj.name}/vender/ImPlot/**.cpp"
 	}
 
 	includedirs
@@ -60,6 +63,7 @@ project "Keela"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.ImPlot}",
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.stb}",
 		"%{IncludeDir.BrassMono}"
@@ -72,7 +76,7 @@ project "Keela"
 		"opengl32.lib",
 		"dwmapi.lib"
 	}
-
+	
 	filter "system:windows"
 	cppdialect "C++17"
 	staticruntime "On"
@@ -109,7 +113,7 @@ project "Keela"
 		runtime"Release"
 		optimize "On"
 
-
+		
 project "KitchenSink"
 	location "KitchenSink"
 	kind "ConsoleApp"

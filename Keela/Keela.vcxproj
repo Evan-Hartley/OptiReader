@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>keepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>KEE_PLATFORM_WINDOWS;KEE_BUILD_DLL;GLFW_INCLUDE_NONE;KEE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vender\spdlog\include;vender\glfw\include;vender\Glad\include;vender\imgui;vender\glm;vender\stb;vender\brass-mono-font;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vender\spdlog\include;vender\glfw\include;vender\Glad\include;vender\imgui;vender\ImPlot;vender\glm;vender\stb;vender\brass-mono-font;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -103,7 +103,7 @@
       <PrecompiledHeaderFile>keepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>KEE_PLATFORM_WINDOWS;KEE_BUILD_DLL;GLFW_INCLUDE_NONE;KEE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vender\spdlog\include;vender\glfw\include;vender\Glad\include;vender\imgui;vender\glm;vender\stb;vender\brass-mono-font;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vender\spdlog\include;vender\glfw\include;vender\Glad\include;vender\imgui;vender\ImPlot;vender\glm;vender\stb;vender\brass-mono-font;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -130,7 +130,7 @@
       <PrecompiledHeaderFile>keepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>KEE_PLATFORM_WINDOWS;KEE_BUILD_DLL;GLFW_INCLUDE_NONE;KEE_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vender\spdlog\include;vender\glfw\include;vender\Glad\include;vender\imgui;vender\glm;vender\stb;vender\brass-mono-font;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vender\spdlog\include;vender\glfw\include;vender\Glad\include;vender\imgui;vender\ImPlot;vender\glm;vender\stb;vender\brass-mono-font;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -152,7 +152,6 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\KKeela\vender\stb\stb_image.h" />
     <ClInclude Include="src\Keela.h" />
     <ClInclude Include="src\Keela\Application.h" />
     <ClInclude Include="src\Keela\Core.h" />
@@ -175,6 +174,8 @@
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\keepch.h" />
+    <ClInclude Include="vender\ImPlot\implot.h" />
+    <ClInclude Include="vender\ImPlot\implot_internal.h" />
     <ClInclude Include="vender\glm\glm\common.hpp" />
     <ClInclude Include="vender\glm\glm\detail\_features.hpp" />
     <ClInclude Include="vender\glm\glm\detail\_fixes.hpp" />
@@ -591,6 +592,7 @@
     <ClInclude Include="vender\glm\glm\vec3.hpp" />
     <ClInclude Include="vender\glm\glm\vec4.hpp" />
     <ClInclude Include="vender\glm\glm\vector_relational.hpp" />
+    <ClInclude Include="vender\stb\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Keela\Application.cpp" />
@@ -607,6 +609,10 @@
     <ClCompile Include="src\keepch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="vender\ImPlot\.github\example_implot.cpp" />
+    <ClCompile Include="vender\ImPlot\implot.cpp" />
+    <ClCompile Include="vender\ImPlot\implot_demo.cpp" />
+    <ClCompile Include="vender\ImPlot\implot_items.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vender\glfw\GLFW.vcxproj">

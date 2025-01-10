@@ -3,6 +3,8 @@
 #include "ControlWindow.h"
 
 #include "imgui.h"
+#include "implot.h"
+#include "implot_internal.h"
 
 #define IMGUI_IMPL_API
 #include "backends/imgui_impl_glfw.h"
@@ -32,12 +34,18 @@ namespace Keela {
 		IMGUI_CHECKVERSION();
 		ImGui::CreateContext();
 		ImGuiIO& io = ImGui::GetIO(); (void)io;
+
+
 		io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;	//Enable Keyboard controls
 		//io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;	//Enable Gamepad controls
 		io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;		//Enable Docking
 		io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;		//Enable Viewports
 		//io.ConfigFlags |= ImGuiConfigFlags_ViewportsNoTaskBarIcons;
 		//io.ConfigFlags |= ImGuiConfigFlags_ViewportsNoMerge;
+
+		ImPlot::SetImGuiContext(ImGui::GetCurrentContext());
+
+		ImPlot::CreateContext();
 
 		// Setup Dear ImGui Style
 		ImGui::StyleColorsLight();
@@ -101,6 +109,7 @@ namespace Keela {
 	{
 		ImGui_ImplOpenGL3_Shutdown();
 		ImGui_ImplGlfw_Shutdown();
+		ImPlot::DestroyContext();
 		ImGui::DestroyContext();
 	}
 
