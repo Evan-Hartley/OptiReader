@@ -180,6 +180,15 @@ void ShowImageSection(const Matrix& img, float& rmin, float& rmax)
 
     float* pic = convertMatrixToArray(img);
 
+    static const ImU32 black_to_white[] = {
+        IM_COL32(0, 0, 0, 255), // Black
+        IM_COL32(255, 255, 255, 255) // White
+    };
+    static ImPlotColormap BtW_Color = ImPlot::AddColormap("BlackToWhite", black_to_white, IM_ARRAYSIZE(black_to_white), false);
+
+    //static ImPlotColormap map = ImPlotColormap_Viridis;
+    ImPlot::PushColormap(BtW_Color);
+
     static ImPlotAxisFlags axes_flags = ImPlotAxisFlags_Lock | ImPlotAxisFlags_NoGridLines | ImPlotAxisFlags_NoTickMarks;
     static ImPlotHeatmapFlags hm_flags = 0;
 
@@ -193,6 +202,7 @@ void ShowImageSection(const Matrix& img, float& rmin, float& rmax)
         ImPlot::EndPlot();
     }
 
+    ImPlot::PopColormap();
 }
 
 // Use a map to store the state for each camIndex
@@ -274,7 +284,7 @@ void ShowOrientationSection(bool& rot90, bool& rot180, bool& rot270, bool& flipx
     if (orientation_current == 2) rot180 = true;
     if (orientation_current == 3) rot270 = true;
 
-    ImGui::Checkbox("Flip Vertically", &flipx);
-    ImGui::Checkbox("Flip Horizontally", &flipy);
+    ImGui::Checkbox("Flip Along Vertical Center", &flipx);
+    ImGui::Checkbox("Flip Along Horizontal Center", &flipy);
 }
 
