@@ -1,3 +1,4 @@
+
 workspace "Keela"
 	architecture "x64"
 	startproject "KitchenSink"
@@ -25,12 +26,14 @@ IncludeDir["BrassMono"] = "Keela/vender/brass-mono-font"
 include "Keela/vender/glfw"
 include "Keela/vender/Glad"
 include "Keela/vender/imgui"
+include "Keela/vender/ImPlot"
 
 
 group "Dependencies"
 	include "Keela/vender/glfw"
 	include "Keela/vender/Glad"
 	include "Keela/vender/imgui"
+	include "Keela/vender/ImPlot"
 group ""
 
 project "Keela"
@@ -51,9 +54,7 @@ project "Keela"
 		"%{prj.name}/vender/glm/glm/**.hpp",
 		"%{prj.name}/vender/glm/glm/**.inl",
 		"%{prj.name}/vender/brass-mono-font/**.ttf",
-		"%{prj.name}/vender/stb/stb_image.h",
-		"%{prj.name}/vender/ImPlot/**.h",
-		"%{prj.name}/vender/ImPlot/**.cpp"
+		"%{prj.name}/vender/stb/stb_image.h"
 	}
 
 	includedirs
@@ -73,10 +74,17 @@ project "Keela"
 		"GLFW",
 		"Glad",
 		"ImGui",
+		"ImPlot",
 		"opengl32.lib",
 		"dwmapi.lib"
 	}
-	
+
+	libdirs
+	{
+		"%{prj.name}/bin/" .. outputdir .. "/ImPlot",
+		"../Basler/pylon7/Applications/x64/lib/pylonviewer/plugins/"
+	}
+
 	filter "system:windows"
 	cppdialect "C++17"
 	staticruntime "On"
@@ -100,18 +108,28 @@ project "Keela"
 		staticruntime "off"
 		runtime"Debug"
 		symbols "On"
+		exceptionhandling "On"
 
 	filter "configurations:Release"
 		defines "KEE_RELEASE"
 		staticruntime "off"
 		runtime"Release"
 		optimize "On"
+		exceptionhandling "On"
 
 	filter "configurations:Dist"
 		defines "KEE_DIST"
 		staticruntime "off"
 		runtime"Release"
 		optimize "On"
+		exceptionhandling "On"
+
+
+    -- Custom configuration for PCH usage
+    filter "configurations:UsePCH"
+        defines "USE_PCH"      -- Define USE_PCH flag
+        pchheader "keepch.h"      -- Specify the precompiled header
+        pchsource "%{prj.name}/vender/ImPlot/implot.cpp"  -- Specify the source file for the PCH
 
 		
 project "KitchenSink"
@@ -134,6 +152,7 @@ project "KitchenSink"
 		"Keela/src",
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.BrassMono}",
+		"%{IncludeDir.ImPlot}",
 		"Keela/vender/"
 	}
 

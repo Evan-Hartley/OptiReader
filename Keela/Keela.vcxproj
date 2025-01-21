@@ -84,6 +84,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <ExceptionHandling>Sync</ExceptionHandling>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -91,6 +92,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>opengl32.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>bin\Debug-windows-x86_64\ImPlot;E:\Basler\pylon7\Applications\x64\lib\pylonviewer\plugins;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\bin\Debug-windows-x86_64\Keela\Keela.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -110,6 +112,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <ExceptionHandling>Sync</ExceptionHandling>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -118,6 +121,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>opengl32.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>bin\Release-windows-x86_64\ImPlot;E:\Basler\pylon7\Applications\x64\lib\pylonviewer\plugins;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\bin\Release-windows-x86_64\Keela\Keela.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -137,6 +141,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <ExceptionHandling>Sync</ExceptionHandling>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -145,6 +150,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>opengl32.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>bin\Dist-windows-x86_64\ImPlot;E:\Basler\pylon7\Applications\x64\lib\pylonviewer\plugins;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\bin\Dist-windows-x86_64\Keela\Keela.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -154,6 +160,7 @@
   <ItemGroup>
     <ClInclude Include="src\Keela.h" />
     <ClInclude Include="src\Keela\Application.h" />
+    <ClInclude Include="src\Keela\Cameras\BaslerCam.h" />
     <ClInclude Include="src\Keela\Core.h" />
     <ClInclude Include="src\Keela\EntryPoint.h" />
     <ClInclude Include="src\Keela\Events\ApplicationEvent.h" />
@@ -174,8 +181,6 @@
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\keepch.h" />
-    <ClInclude Include="vender\ImPlot\implot.h" />
-    <ClInclude Include="vender\ImPlot\implot_internal.h" />
     <ClInclude Include="vender\glm\glm\common.hpp" />
     <ClInclude Include="vender\glm\glm\detail\_features.hpp" />
     <ClInclude Include="vender\glm\glm\detail\_fixes.hpp" />
@@ -596,6 +601,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Keela\Application.cpp" />
+    <ClCompile Include="src\Keela\Cameras\BaslerCam.cpp" />
     <ClCompile Include="src\Keela\ImGui\CameraWindow.cpp" />
     <ClCompile Include="src\Keela\ImGui\ControlWindow.cpp" />
     <ClCompile Include="src\Keela\ImGui\ImGuiBuild.cpp" />
@@ -609,10 +615,6 @@
     <ClCompile Include="src\keepch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="vender\ImPlot\.github\example_implot.cpp" />
-    <ClCompile Include="vender\ImPlot\implot.cpp" />
-    <ClCompile Include="vender\ImPlot\implot_demo.cpp" />
-    <ClCompile Include="vender\ImPlot\implot_items.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vender\glfw\GLFW.vcxproj">
@@ -623,6 +625,9 @@
     </ProjectReference>
     <ProjectReference Include="vender\imgui\ImGui.vcxproj">
       <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vender\ImPlot\ImPlot.vcxproj">
+      <Project>{1AC209BA-0664-3490-EF1E-48E4DB5FBBE0}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

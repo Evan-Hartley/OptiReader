@@ -10,3 +10,12 @@
 [submodule "Keela/vender/ImPlot"]
 	path = Keela/vender/ImPlot
 	url = https://github.com/epezent/implot.git
+[submodule "Keela/vender/opencv"]
+	path = Keela/vender/opencv
+	url = https://github.com/opencv/opencv.git
+[submodule "Keela/vender/pylon"]
+	path = Keela/vender/pylon
+	url = https://github.com/pylon-lib/pylon.git
+[submodule "Keela/vender/basler/gst-plugin-pylon"]
+	path = Keela/vender/basler/gst-plugin-pylon
+	url = https://github.com/basler/gst-plugin-pylon.git

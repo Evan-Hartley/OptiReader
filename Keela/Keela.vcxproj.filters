@@ -7,6 +7,9 @@
     <Filter Include="src\Keela">
       <UniqueIdentifier>{7E5A42B3-EAC4-F629-3303-A8CF9FACD47E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Keela\Cameras">
+      <UniqueIdentifier>{691C025A-D532-00F0-1EAA-8B118AFFD077}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Keela\Events">
       <UniqueIdentifier>{A28CB56D-8E85-D4BF-B7B7-B944A30FB4CB}</UniqueIdentifier>
     </Filter>
@@ -21,12 +24,6 @@
     </Filter>
     <Filter Include="vender">
       <UniqueIdentifier>{69728122-5514-ACF8-3ECF-BF4C2A103349}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="vender\ImPlot">
-      <UniqueIdentifier>{0D674933-7927-C569-4262-0EE7AEE10946}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="vender\ImPlot\.github">
-      <UniqueIdentifier>{8DEF0F95-F95B-CB8F-C24F-63ED2E7BEDF7}</UniqueIdentifier>
     </Filter>
     <Filter Include="vender\glm">
       <UniqueIdentifier>{38097291-24C1-B3DE-8DC8-8C3A799F4ECF}</UniqueIdentifier>
@@ -56,6 +53,9 @@
     </ClInclude>
     <ClInclude Include="src\Keela\Application.h">
       <Filter>src\Keela</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Keela\Cameras\BaslerCam.h">
+      <Filter>src\Keela\Cameras</Filter>
     </ClInclude>
     <ClInclude Include="src\Keela\Core.h">
       <Filter>src\Keela</Filter>
@@ -116,12 +116,6 @@
     </ClInclude>
     <ClInclude Include="src\keepch.h">
       <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="vender\ImPlot\implot.h">
-      <Filter>vender\ImPlot</Filter>
-    </ClInclude>
-    <ClInclude Include="vender\ImPlot\implot_internal.h">
-      <Filter>vender\ImPlot</Filter>
     </ClInclude>
     <ClInclude Include="vender\glm\glm\common.hpp">
       <Filter>vender\glm\glm</Filter>
@@ -1379,6 +1373,9 @@
     <ClCompile Include="src\Keela\Application.cpp">
       <Filter>src\Keela</Filter>
     </ClCompile>
+    <ClCompile Include="src\Keela\Cameras\BaslerCam.cpp">
+      <Filter>src\Keela\Cameras</Filter>
+    </ClCompile>
     <ClCompile Include="src\Keela\ImGui\CameraWindow.cpp">
       <Filter>src\Keela\ImGui</Filter>
     </ClCompile>
@@ -1411,18 +1408,6 @@
     </ClCompile>
     <ClCompile Include="src\keepch.cpp">
       <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="vender\ImPlot\.github\example_implot.cpp">
-      <Filter>vender\ImPlot\.github</Filter>
-    </ClCompile>
-    <ClCompile Include="vender\ImPlot\implot.cpp">
-      <Filter>vender\ImPlot</Filter>
-    </ClCompile>
-    <ClCompile Include="vender\ImPlot\implot_demo.cpp">
-      <Filter>vender\ImPlot</Filter>
-    </ClCompile>
-    <ClCompile Include="vender\ImPlot\implot_items.cpp">
-      <Filter>vender\ImPlot</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
